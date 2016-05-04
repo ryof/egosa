@@ -1,0 +1,26 @@
+{
+  "debug": {
+    "show_timeline": false
+  },
+  "twitter": {
+    "consumer_key": "",
+    "consumer_secret": "",
+    "access_token_key": "",
+    "access_token_secret": ""
+  },
+  "pushover": {
+    "user": "xxxxxYourUserKeyxxxxx",
+    "token": "xxxxxYourApiTokenxxxxx"
+  },
+  "filter": {
+    "keyword_match": [
+      ""
+    ],
+    "exclude_source_username": [
+      ""
+    ]
+  },
+  "target_device": [
+    "iPhone"
+  ]
+}

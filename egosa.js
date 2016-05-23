@@ -52,6 +52,7 @@ function main_process() {
 }
 
 var keyword_list = conf.filter.keyword_match;
+var regexp_list = conf.filter.regexp_match;
 var exclude_username = conf.filter.exclude_source_username;
 
 // filtering
@@ -65,11 +66,20 @@ function filter_tweet(user, tweet) {
   }
   // return true if hits for the keywords
   for (i = 0; i < keyword_list.length; i++) {
-    if (tweet.indexOf(keyword_list[i]) != -1) {
+    if (keyword_list[i] != "" && tweet.indexOf(keyword_list[i]) != -1) {
       return true;
     }
   }
-
+  // return true if hits for the regular expressions
+  for (i = 0; i < regexp_list.length; i++) {
+    if (regexp_list[i] == "") {
+      continue;
+    }
+    var regexp = new RegExp(regexp_list[i]);
+    if (tweet.match(regexp)) {
+      return true;
+    }
+  }
   return false;
 }
 

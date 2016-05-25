@@ -16,6 +16,9 @@
     "keyword_match": [
       ""
     ],
+    "regexp_match": [
+      ""
+    ],
     "exclude_source_username": [
       ""
     ]
